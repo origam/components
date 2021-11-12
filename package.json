@@ -1,0 +1,49 @@
+{
+  "name": "@origam/components",
+  "main": "dist/index.js",
+  "version": "0.0.4",
+  "repository": "git://github.com/origam/components.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "src/styles/*.scss",
+    "src/components/Dropdown/Dropdown.module.scss"
+  ],
+  "devDependencies": {
+    "@types/lodash": "^4.14.176",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-measure": "^2.0.8",
+    "@types/uuid": "^8.3.1",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "classnames": "^2.3.1",
+    "lodash": "^4.17.21",
+    "mobx": "5",
+    "mobx-react": "6",
+    "postcss": "^8.3.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-measure": "^2.5.2",
+    "resolve": "^1.20.0",
+    "rollup": "^2.59.0",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-sass": "^1.2.9",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.4.4",
+    "uuid": "^8.3.2",
+    "@origam/styles": "^0.0.1"
+  },
+  "peerDependencies": {
+    "mobx": "5",
+    "mobx-react": "6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  }
+}

@@ -1,11 +1,7 @@
 {
   "name": "@origam/components",
   "main": "dist/index.js",
-  "version": "0.0.5",
-  "repository": "git://github.com/origam/components.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "version": "1.0.0",
   "files": [
     "dist",
     "src/components/Dropdown/Dropdown.module.scss"

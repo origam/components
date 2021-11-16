@@ -1,7 +1,7 @@
 {
   "name": "@origam/components",
   "main": "dist/index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": [
     "dist",
     "src/components/Dropdown/Dropdown.module.scss"

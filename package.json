@@ -1,13 +1,14 @@
 {
   "name": "@origam/components",
   "main": "dist/index.js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "license": "GPL-3.0",
   "files": [
     "dist",
     "src/components/Dropdown/Dropdown.module.scss"
   ],
   "devDependencies": {
+    "@origam/styles": "^2.0.0",
     "@types/lodash": "^4.14.176",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
@@ -29,8 +30,7 @@
     "rollup-plugin-sass": "^1.2.9",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.4.4",
-    "uuid": "^8.3.2",
-    "@origam/styles": "^0.0.1"
+    "uuid": "^8.3.2"
   },
   "peerDependencies": {
     "mobx": "5",

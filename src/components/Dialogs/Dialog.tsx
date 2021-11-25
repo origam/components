@@ -20,29 +20,10 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 import S from "./Dialog.module.scss";
 import React from "react";
 
-import * as ReactDOM from "react-dom";
 import { observer, Observer } from "mobx-react";
 import { action, observable } from "mobx";
 import Measure, { BoundingRect } from "react-measure";
-import { Icon } from "gui/Components/Icon/Icon";
-
-export class ModalWindowOverlay extends React.Component {
-  render() {
-    return ReactDOM.createPortal(
-      <div className={S.modalWindowOverlay}>{this.props.children}</div>,
-      document.getElementById("modal-window-portal")!
-    );
-  }
-}
-
-export class ModalWindowNoOverlay extends React.Component {
-  render() {
-    return ReactDOM.createPortal(
-      this.props.children,
-      document.getElementById("modal-window-portal")!
-    );
-  }
-}
+import { Icon } from "../Icon/Icon";
 
 @observer
 export class ModalWindow extends React.Component<{

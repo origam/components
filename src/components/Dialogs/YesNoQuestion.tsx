@@ -19,13 +19,14 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 
 import { observer } from "mobx-react";
 import React from "react";
-import { ModalWindow } from "gui/Components/Dialog/Dialog";
-import { T } from "utils/translation";
-import CS from "gui/Components/Dialogs/DialogsCommon.module.css";
+import { ModalWindow } from "./Dialog";
+import CS from "@origam/styles/dist/styles/DialogsCommon.module.scss";
 
 @observer
 export class YesNoQuestion extends React.Component<{
   screenTitle: string;
+  yesLabel: string;
+  noLabel: string;
   message: string;
   onYesClick?: (event: any) => void;
   onNoClick?: (event: any) => void;
@@ -44,7 +45,7 @@ export class YesNoQuestion extends React.Component<{
   render() {
     return (
       <ModalWindow
-        title={T("Question", "question_title")}
+        title={this.props.screenTitle}
         titleButtons={null}
         buttonsCenter={
           <>
@@ -55,14 +56,14 @@ export class YesNoQuestion extends React.Component<{
               ref={this.refPrimaryBtn}
               onClick={this.props.onYesClick}
             >
-              {T("Yes", "button_yes")}
+              {this.props.yesLabel}
             </button>
             <button
               id={"noButton"}
               tabIndex={0}
               onClick={this.props.onNoClick}
             >
-              {T("No", "button_no")}
+              {this.props.noLabel}
             </button>
           </>
         }

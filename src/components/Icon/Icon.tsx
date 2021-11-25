@@ -19,7 +19,7 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
 import Svg from "react-inlinesvg";
-import S from "gui/Components/Icon/Icon.module.scss";
+import S from "./Icon.module.scss";
 import cx from "classnames";
 
 export class Icon extends React.Component<{

@@ -18,6 +18,9 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 */
 
 export { Button } from './components/Button/Button';
+export { ModalWindow, CloseButton } from './components/Dialogs/Dialog';
+export { Icon } from './components/Icon/Icon';
+export { YesNoQuestion } from './components/Dialogs/YesNoQuestion';
 export { SimpleDropdown, IOption } from './components/Dropdown/SimpleDropdown';
 export { CtxDropdownBodyRect, CtxDropdownCtrlRect, CtxDropdownRefBody, CtxDropdownRefCtrl } from './components/Dropdown/DropdownCommon';
 export { DropdownLayout } from './components/Dropdown/DropdownLayout';

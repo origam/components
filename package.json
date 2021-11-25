@@ -1,7 +1,7 @@
 {
   "name": "@origam/components",
   "main": "dist/index.js",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "license": "GPL-3.0",
   "files": [
     "dist",
@@ -41,5 +41,8 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w"
+  },
+  "dependencies": {
+    "react-inlinesvg": "^2.3.0"
   }
 }

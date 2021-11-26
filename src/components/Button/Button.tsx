@@ -5,11 +5,29 @@ export class Button extends React.Component<{
   onClick: () => void,
   label: string,
   className?: string;
-  changeColorOnFocus?: boolean
+  changeColorOnFocus?: boolean;
+  disabled?: boolean;
 }> {
+
+  getStyle(){
+    let className = S.button + " " + (this.props.className ?? "");
+    if(this.props.disabled){
+      className += " " + S.disabledButton;
+      return className;
+    }
+    if(this.props.changeColorOnFocus){
+      className += " " + S.focusedButton;
+    }
+    return className;
+  }
+
   render() {
     return <button
-      className={S.button + " " + (this.props.className ?? "") + (this.props.changeColorOnFocus ? S.focusedButton : "")}
-      onClick={() => this.props.onClick()}>{this.props.label}</button>
+      className={this.getStyle()}
+      onClick={() => this.props.onClick()}
+      disabled={this.props.disabled}
+    >
+      {this.props.label}
+    </button>
   }
 }

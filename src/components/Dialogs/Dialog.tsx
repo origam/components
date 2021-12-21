@@ -35,6 +35,7 @@ export class ModalWindow extends React.Component<{
   buttonsCenter: React.ReactNode;
   width?: number;
   height?: number;
+  fullScreen?: boolean;
   topPosiotionProc?: number;
   onKeyDown?: (event: any) => void;
 }> {
@@ -158,10 +159,10 @@ export class ModalWindow extends React.Component<{
                 ref={measureRef}
                 className={S.modalWindow}
                 style={{
-                  top: this.top,
-                  left: this.left,
-                  minWidth: this.props.width,
-                  minHeight: this.props.height,
+                  top: this.props.fullScreen ? 0 : this.top,
+                  left: this.props.fullScreen ? 0 : this.left,
+                  minWidth: this.props.fullScreen ? "100%" : this.props.width,
+                  minHeight: this.props.fullScreen ? "100%" : this.props.height,
                 }}
                 tabIndex={0}
                 onKeyDown={(event: any) => this.onKeyDown(event)}

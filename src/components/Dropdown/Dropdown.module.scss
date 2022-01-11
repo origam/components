@@ -29,7 +29,7 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 
   :global(.input) {
     flex: 1 0 0;
-    min-width: 0px;
+    min-width: 0;
     border: 1px solid var(--background5);
     border-right: none;
     background-color: var(--background1);
@@ -51,6 +51,9 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
   }
 
   :global(.inputBtn) {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     flex: 0 0 0;
     border: 1px solid var(--background5);
     border-right: none;
@@ -82,7 +85,6 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 .body {
   z-index: 2000;
   display: inline-block;
-  // overflow: hidden;
   border: 1px solid var(--background5);
   background-color: var(--background1);
   border-radius: 2px;
@@ -104,7 +106,6 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
     display: flex;
     flex-direction: row;
     align-items: center;
-    //border-top: 1px solid var(--background3);
     overflow: hidden;
     white-space: nowrap;
     &:global(.ord1) {

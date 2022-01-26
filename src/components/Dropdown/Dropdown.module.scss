@@ -121,11 +121,15 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
     }
     &:global(.withCursor) {
       background-color: var(--foreground1);
-      color:var(--background1) !important;
+      color:var(--background1)
     }
     &:global(.selected) {
       font-weight: bold;
       color: var(--foreground1);
+    }
+    &:global(.selected):global(.withCursor) {
+      background-color: var(--foreground1);
+      color:var(--background1)
     }
   }
 

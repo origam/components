@@ -18,7 +18,7 @@ along with ORIGAM. If not, see <http://www.gnu.org/licenses/>.
 */
 
 import { observer } from "mobx-react";
-import React, { useContext, useState } from "react";
+import React, { CSSProperties, useContext, useState } from "react";
 import { observable } from "mobx";
 import { DropdownLayout } from "./DropdownLayout";
 import { DropdownLayoutBody } from "./DropdownLayoutBody";
@@ -33,10 +33,11 @@ import cx from "classnames";
 
 @observer
 export class SimpleDropdown<T> extends React.Component<{
-  width: string,
+  width?: string,
   options: IOption<T>[],
   selectedOption: IOption<T>,
   onOptionClick: (option: IOption<T>) => void
+  className?: string;
 }> {
   id = "SimpleDropdown_" + uuidv4()
 
@@ -80,6 +81,13 @@ export class SimpleDropdown<T> extends React.Component<{
     this.props.onOptionClick(option);
   }
 
+  getStyle(){
+    if(this.props.width){
+      return {width: this.props.width}
+    }
+    return {}
+  }
+
   render() {
     return (
       <div
@@ -88,7 +96,8 @@ export class SimpleDropdown<T> extends React.Component<{
           isDropped={this.isDropped}
           renderCtrl={() => (
             <DropDownControl
-              width={this.props.width}
+              style={this.getStyle()}
+              className={this.props.className}
               onMouseDown={() => this.isDropped = !this.isDropped}
               value={this.props.selectedOption.label}
             />
@@ -98,7 +107,7 @@ export class SimpleDropdown<T> extends React.Component<{
               minSideMargin={0}
               render={() => (
                 <DropDownBody
-                  width={this.props.width}
+                  style={this.getStyle()}
                   options={this.props.options}
                   selected={this.props.selectedOption}
                   onOptionClick={option => this.onOptionClick(option)}
@@ -113,19 +122,20 @@ export class SimpleDropdown<T> extends React.Component<{
 }
 
 
-export function DropDownControl(props: {
+function DropDownControl(props: {
   onMouseDown: () => void;
   value: string;
-  width: string
+  style: CSSProperties;
+  className?: string
 }) {
   const ref = useContext(CtxDropdownRefCtrl);
 
   return (
     <div
-      style={{width: props.width, height: "19px"}}
+      style={props.style}
       onMouseDown={() => props.onMouseDown()}
       ref={ref}
-      className={CS.control}>
+      className={CS.control + " " + props.className}>
       <input
         className={cx(S.input)}
         value={props.value}
@@ -140,8 +150,8 @@ export function DropDownControl(props: {
 }
 
 
-export function DropDownBody<T>(props: {
-  width: string,
+function DropDownBody<T>(props: {
+  style: CSSProperties;
   options: IOption<T>[],
   selected: IOption<T>,
   onOptionClick: (option: IOption<T>) => void
@@ -153,7 +163,7 @@ export function DropDownBody<T>(props: {
     <div
       ref={ref}
       className={cx(CS.body, CS.table)}
-      style={{width: props.width}}>
+      style={props.style}>
       {props.options.map((option, i) =>
         <div
           key={option.label + option.value}

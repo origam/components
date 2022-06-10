@@ -8,7 +8,7 @@
     "src/components/Dropdown/Dropdown.module.scss"
   ],
   "devDependencies": {
-    "@origam/styles": "^2.0.1",
+    "@origam/styles": "^2.0.2",
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",

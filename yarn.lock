@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@origam/styles@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@origam/styles/-/styles-2.0.1.tgz"
-  integrity sha512-Dxh70E0iowDXbcMA0JZVNpP3FQG4AdI6+aSn0U02EdjzLIy1X85225OnL5iEioWTXBRMJVECxwuNS2OPGvDIKw==
+"@origam/styles@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@origam/styles/-/styles-2.0.2.tgz#505dade3528f969895fdd931391eeae43ae51257"
+  integrity sha512-MPp0M+w2f3ovN3O5jnGyvN1gWZvpzeDbOjqAEzN6Xw6lgZZeT+OFUk4Hul/Qpav0EDklDFuqHu66p9JRMhReKQ==
 
 "@rollup/pluginutils@^3.1.0":
   version "3.1.0"

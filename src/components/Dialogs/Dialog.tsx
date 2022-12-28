@@ -38,11 +38,31 @@ export class ModalWindow extends React.Component<{
   fullScreen?: boolean;
   topPosiotionProc?: number;
   onKeyDown?: (event: any) => void;
+  onWindowMove?: (top: number, left: number)=>void;
 }> {
-  @observable top: number = window.screen.height + 50;
-  @observable left: number = window.screen.width + 50;
+  @observable _top: number = window.screen.height + 50;
+  set top(value: number){
+    this._top = value;
+    if(this.props.onWindowMove && this.reportingWindowMove){
+      this.props.onWindowMove(this._top, this._left);
+    }
+  }
+  get top(){
+    return this._top;
+  }
+  @observable _left: number = window.screen.width + 50;
+  set left(value: number){
+    this._left = value;
+    if(this.props.onWindowMove && this.reportingWindowMove){
+      this.props.onWindowMove(this._top, this._left);
+    }
+  }
+  get left(){
+    return this._left;
+  }
   @observable isDragging = false;
 
+  reportingWindowMove = false;
   dragStartMouseX = 0;
   dragStartMouseY = 0;
   dragStartPosX = 0;
@@ -64,6 +84,12 @@ export class ModalWindow extends React.Component<{
   }
 
   @action.bound handleTitleMouseDown(event: any) {
+    if(!this.reportingWindowMove){
+      this.reportingWindowMove = true;
+      if(this.props.onWindowMove){
+        this.props.onWindowMove(this._top, this._left);
+      }
+    }
     window.addEventListener("mousemove", this.handleWindowMouseMove);
     window.addEventListener("mouseup", this.handleWindowMouseUp);
     this.isDragging = true;

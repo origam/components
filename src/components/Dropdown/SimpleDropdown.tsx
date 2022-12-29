@@ -162,7 +162,7 @@ function DropDownBody<T>(props: {
   return (
     <div
       ref={ref}
-      className={cx(CS.body, CS.table)}
+      className={cx(CS.body, CS.table, S.body)}
       style={props.style}>
       {props.options.map((option, i) =>
         <div

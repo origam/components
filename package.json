@@ -13,7 +13,7 @@
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.11",
     "@types/react-measure": "^2.0.8",
-    "@types/uuid": "^8.3.4",
+    "@types/uuid": "^9.0.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "classnames": "^2.3.1",
@@ -30,7 +30,7 @@
     "rollup-plugin-sass": "^1.2.9",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.5.4",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "mobx": "5",

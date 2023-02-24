@@ -44,6 +44,6 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "react-inlinesvg": "^3.0.1"
+    "react-inlinesvg": "^3.0.2"
   }
 }

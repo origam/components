@@ -6,13 +6,14 @@ export default {
   output: [
     {
       dir: './dist',
-      format: 'cjs',
+      format: 'es',
       exports: 'named',
       sourcemap: true,
-      strict: false
+      strict: false,
+      preserveModules: true,
     }
   ],
-  preserveModules: false,
+  
   plugins: [
     typescript(),
      postcss({

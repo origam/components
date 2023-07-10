@@ -1,12 +1,13 @@
 {
   "name": "@origam/components",
-  "main": "dist/index.js",
-  "version": "1.6.2",
+  "main": "dist/src/index.js",
+  "version": "1.6.3",
   "license": "GPL-3.0",
   "files": [
     "dist",
     "src/components/Dropdown/Dropdown.module.scss"
   ],
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@origam/styles": "^2.0.3",
     "@types/lodash": "^4.14.195",

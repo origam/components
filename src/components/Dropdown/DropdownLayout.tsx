@@ -88,7 +88,13 @@ export function DropdownLayout(props: {
   useEffect(() => {
     let intervalHandle: any;
     const handleScroll = _.throttle((event: any) => {
-      if (elmDropdownPortal && !elmDropdownPortal.contains(event.target) && props.isDropped) {
+      if (
+        elmDropdownPortal &&
+        !elmDropdownPortal.contains(event.target) &&
+        event.target.tagName !== "INPUT" && // the scroll event is fired in the focused INPUT after clicking the drop icon in firefox. Preventing the dropdown from being shown.
+        props.isDropped)
+      {
+        console.log(event);
         props.onDropupRequest?.();
       }
     }, 100);

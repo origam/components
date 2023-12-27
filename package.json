@@ -30,7 +30,7 @@
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-sass": "^1.12.21",
     "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.3",
     "uuid": "^9.0.1"
   },
   "peerDependencies": {
